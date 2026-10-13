@@ -1,0 +1,55 @@
+{
+  "name": "overwing-x402-preflight",
+  "version": "0.1.0",
+  "description": "Check an x402 payment before your agent signs it. One call on any @x402 client's onBeforePaymentCreation hook: the 402 terms against your policy, the payee against the x402 directory and the server's own manifest, the price against the record. Allow, review or refuse, with reasons.",
+  "license": "MIT",
+  "type": "module",
+  "homepage": "https://overwing.ai/api/v1/preflight/x402",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/frod27/overwing-x402-preflight.git"
+  },
+  "bugs": {
+    "url": "https://github.com/frod27/overwing-x402-preflight/issues"
+  },
+  "author": "Overwing <support@overwing.ai> (https://overwing.ai)",
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js"
+    }
+  },
+  "files": [
+    "dist",
+    "README.md",
+    "LICENSE"
+  ],
+  "sideEffects": false,
+  "scripts": {
+    "build": "tsc -p tsconfig.json",
+    "test": "node --test test/*.test.ts",
+    "prepublishOnly": "npm run build && npm test"
+  },
+  "keywords": [
+    "x402",
+    "payments",
+    "agents",
+    "wallet",
+    "usdc",
+    "preflight",
+    "spend-control",
+    "guardrails",
+    "overwing",
+    "x402-fetch",
+    "x402-axios"
+  ],
+  "engines": {
+    "node": ">=20"
+  },
+  "devDependencies": {
+    "@types/node": "^26.6.2",
+    "typescript": "^7.0.2"
+  }
+}
